@@ -95,12 +95,19 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card card-secondary">
-                            <div class="card-header">
-                                <h3 class="card-title">DataTable with default features</h3>
+                            <div class="card-header d-flex p-0">
+                                <h3 class="card-title p-3">DataTable with default features</h3>
+                                <ul class="nav nav-pills ml-auto p-2">
+                                    <li class="nav-item">
+                                        <a class="btn bg-gradient-primary" href="{{ route('create') }}" data-toggle="tab">
+                                            <i class="fa-solid fa-calendar-plus"></i>&nbsp; Add Event
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <table id="example1" class="table table-bordered table-striped">
+                                <table id="example1" class="table table-sm table-bordered table-striped">
                                     <thead>
                                         <tr>
                                             <th>No</th>
