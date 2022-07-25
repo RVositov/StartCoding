@@ -120,13 +120,14 @@
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->date }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal{{ $post->id }}">
+                                            <a href="#" class="btn btn-sm btn-info" onclick="fnShow({{ $post->id }}, '{{ $post->title }}', '{{ $post->date }}')" 
+                                                data-toggle="modal">
                                                 <i class="fa-solid fa-eye"></i>&nbsp; Show
                                             </a>
                                             <a href="{{ route('admin.edit', $post->id) }}" class="btn btn-sm btn-warning">
                                                 <i class="fa-solid fa-pen-to-square"></i>&nbsp; Edit
                                             </a>
-                                            <a href="{{ route('admin.destroy', $post->id) }}" class="btn btn-sm btn-danger">
+                                            <a href="#" class="btn btn-sm btn-danger" onclick="fnDelete({{ $post->id }})" data-toggle="modal">
                                                 <i class="fa-solid fa-trash"></i>&nbsp; Delete
                                             </a>
                                         </td>
@@ -158,32 +159,25 @@
 
 <!-- /.content-wrapper -->
 
-
-
-@foreach ($posts as $post)
-<!-- Modal -->
-<div class="modal fade" id="exampleModal{{ $post->id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ $post->id }}" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel{{ $post->id }}">{{ $post->date }}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                {{ $post->title }}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a href="{{ route('admin.edit', $post->id) }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i>&nbsp; Edit</a>
-            </div>
+<div id="openModal">
+    <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+           <div class="modal-content">
+              <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                    </button>
+              </div>
+              <div class="modal-body">
+                    
+              </div>
+              <div class="modal-footer">
+                    
+              </div>
+           </div>
         </div>
-    </div>
+     </div>
 </div>
-@endforeach
-
-
-
 
 @endsection
