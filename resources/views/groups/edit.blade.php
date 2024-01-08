@@ -6,22 +6,14 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
-
-            @if($errors->any())
-                <div class="alert alert-default-danger">
-                    @foreach($errors->all() as $error)
-                        {{$error}} <br>
-                    @endforeach
-                </div>
-            @endif
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Добавления клиента</h1>
+                    <h1>Изменения</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Add Event</li>
+                        <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                        <li class="breadcrumb-item active">Изменения данных</li>
                     </ol>
                 </div>
             </div>
@@ -36,30 +28,31 @@
                 <div class="col-12">
                     <div class="card card-outline card-info">
                         <div class="card-header d-flex p-0">
-                            <h3 class="card-title p-3">Добавления нового клиента</h3>
+                            <h3 class="card-title p-3">Изменения клиентских данных</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <form action="{{ route('teachers.store') }}" method="post" >
+                            <form method="POST" action="{{ route('teachers.update', $teacher->id) }}" >
                                 @csrf
+                                @method('PUT')
                                 <div class="form-group">
                                     <label for="name">Имя:</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Имя">
+                                    <input type="text" name="name" class="form-control" placeholder="Имя" value="{{$teacher->name}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="surname">Фамилия:</label>
-                                    <input type="text" name="surname" class="form-control" placeholder="Фамилия">
+                                    <input type="text" name="surname" class="form-control" placeholder="Фамилия" value="{{$teacher->surname}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="phone">Телефон:</label>
-                                    <input type="text" name="phone" class="form-control" placeholder="Телефон">
+                                    <input type="text" name="phone" class="form-control" placeholder="Телефон" value="{{$teacher->phone}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="birthday">Дата рождения:</label>
-                                    <input type="date" name="birthday" class="form-control" placeholder="Дата рождения">
+                                    <input type="date" name="birthday" class="form-control" placeholder="Дата рождения" value="{{$teacher->birthday}}">
                                 </div>
 
                                 <div class="form-group">
@@ -68,7 +61,7 @@
                                     <small class="form-text text-muted">Only PNG, JPEG, and JPG files are allowed.</small>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Добавить</button>
+                                <button type="submit" class="btn btn-primary">Изменить</button>
                             </form>
                         </div>
                         <!-- /.card-body -->

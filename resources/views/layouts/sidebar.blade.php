@@ -71,6 +71,33 @@
 
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-address-book"></i>
+                        <p>
+                            Группы
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('groups.index')}}" class="nav-link">
+                                <i class="fa-solid fa-users nav-icon"></i>
+                                <p>Список </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{route('groups.create')}}" class="nav-link">
+                                <i class="fa fa-user nav-icon"></i>
+                                <p>Добавить </p>
+                            </a>
+                        </li>
+
+
+
+                    </ul>
+                </li>
 
 
 
