@@ -5,7 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PersonalAccessToken extends Model
+class Course extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'updated_at',
+        'created_at',
+    ];
 }

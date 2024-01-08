@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\GroupController;
 use App\Http\Controllers\UserController;
 
 
@@ -38,6 +39,7 @@ Route::middleware(['auth.redirect'])->group(function () {
     })->name('dashboard');
 
     Route::resource('teachers', TeacherController::class);
+    Route::resource('groups', GroupController::class);
 
 
 

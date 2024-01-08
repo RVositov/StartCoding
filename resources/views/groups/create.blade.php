@@ -6,8 +6,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
-
-            @if($errors->any())
+           @if($errors->any())
                 <div class="alert alert-default-danger">
                     @foreach($errors->all() as $error)
                         {{$error}} <br>
@@ -16,7 +15,7 @@
             @endif
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Добавления клиента</h1>
+                    <h1> </h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -40,32 +39,54 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <form action="{{ route('teachers.store') }}" method="post" >
+                            <form action="{{ route('groups.store') }}" method="post" >
                                 @csrf
                                 <div class="form-group">
-                                    <label for="name">Имя:</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Имя">
+                                    <label for="name">Названия группы:</label>
+                                    <input type="text" name="name" class="form-control" placeholder="">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="surname">Фамилия:</label>
-                                    <input type="text" name="surname" class="form-control" placeholder="Фамилия">
+                                    <label for="course_id">Курс:</label>
+                                    <select name="course_id" class="form-control">
+                                        @foreach($courses as $course)
+                                        <option value="{{$course->id}}">{{$course->name}}</option>
+                                        @endforeach
+                                    </select>
+
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="phone">Телефон:</label>
-                                    <input type="text" name="phone" class="form-control" placeholder="Телефон">
+                                    <label for="price">Цена:</label>
+                                    <input type="number" name="price" class="form-control" placeholder="" value="250">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="birthday">Дата рождения:</label>
-                                    <input type="date" name="birthday" class="form-control" placeholder="Дата рождения">
+                                    <label for="start_date">Начало курса:</label>
+                                    <input type="date" name="start_date" class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="image">Image:</label>
-                                    <input type="file" name="image" class="form-control-file" accept=".png, .jpeg, .jpg">
-                                    <small class="form-text text-muted">Only PNG, JPEG, and JPG files are allowed.</small>
+                                    <label for="end_date">Конец курса:</label>
+                                    <input type="date" name="end_date" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="shift">Смена:</label>
+                                    <select name="shift" class="form-control">
+                                        <option value="1">Первая смена</option>
+                                        <option value="2">Вторая смена</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="status_id">Статус:</label>
+                                    <select name="status_id" class="form-control">
+                                        @foreach($statuses as $status)
+                                        <option value="{{$status->id}}">{{$status->status}}</option>
+                                        @endforeach
+                                    </select>
+
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Добавить</button>

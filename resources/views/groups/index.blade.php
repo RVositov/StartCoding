@@ -11,6 +11,13 @@
                     {{ session('success') }}
                 </div>
             @endif
+            @if($errors->any())
+                <div class="alert alert-default-danger">
+                    @foreach($errors->all() as $error)
+                        {{$error}} <br>
+                    @endforeach
+                </div>
+            @endif
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>Клиенты</h1>
@@ -37,8 +44,8 @@
                             <h3 class="card-title p-3">Информация о клиентах</h3>
                             <ul class="nav nav-pills ml-auto p-2">
                                 <li class="nav-item">
-                                    <a class="btn bg-gradient-info" href="{{ route('teachers.create') }}">
-                                        <i class="fa-solid fa-calendar-plus"></i>&nbsp; Добавить учителья
+                                    <a class="btn bg-gradient-info" href="{{ route('groups.create') }}">
+                                        <i class="fa-solid fa-calendar-plus"></i>&nbsp; Добавить
                                     </a>
                                 </li>
                             </ul>
