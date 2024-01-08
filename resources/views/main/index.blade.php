@@ -29,13 +29,13 @@
 
                     <div class="small-box bg-info" bis_skin_checked="1">
                         <div class="inner" bis_skin_checked="1">
-                            <h3>{{$reportData['clientsCount']}}</h3>
+                            <h3></h3>
                             <p>Количество клиентов</p>
                         </div>
                         <div class="icon" bis_skin_checked="1">
                             <i class="ion ion-bag"></i>
                         </div>
-                        <a href="{{route('client')}}" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
@@ -43,7 +43,7 @@
 
                     <div class="small-box bg-success" bis_skin_checked="1">
                         <div class="inner" bis_skin_checked="1">
-                            <h3>{{$reportData['invoiceCount']}}</h3>
+                            <h3></h3>
                             <p>Количество инвойсов</p>
                         </div>
                         <div class="icon" bis_skin_checked="1">

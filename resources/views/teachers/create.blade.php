@@ -48,29 +48,30 @@
                             <form action="{{ route('teachers.store') }}" method="post" >
                                 @csrf
                                 <div class="form-group">
-                                    <label>Фамилия Имя Отчество:</label>
-                                    <input type="text" name="fio" class="form-control" placeholder="ФИО">
-                                </div>
-                                <div class="form-group">
-                                    <label>Телефон:</label>
-                                    <div class="input-group">
-                                        <input type="tel" name="phone" class="form-control" placeholder="+992927123456">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Адрес:</label>
-                                    <div class="input-group">
-                                        <input type="text" name="address" class="form-control" placeholder="+992927123456">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Дополнительная информация:</label>
-                                    <div class="input-group">
-                                        <textarea name="info" class="form-control" rows="4" placeholder="Дополнительная информация"> </textarea>
-                                    </div>
+                                    <label for="name">Имя:</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Имя">
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="surname">Фамилия:</label>
+                                    <input type="text" name="surname" class="form-control" placeholder="Фамилия">
+                                </div>
 
+                                <div class="form-group">
+                                    <label for="phone">Телефон:</label>
+                                    <input type="text" name="phone" class="form-control" placeholder="Телефон">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="birthday">Дата рождения:</label>
+                                    <input type="date" name="birthday" class="form-control" placeholder="Дата рождения">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="image">Image:</label>
+                                    <input type="file" name="image" class="form-control-file" accept=".png, .jpeg, .jpg">
+                                    <small class="form-text text-muted">Only PNG, JPEG, and JPG files are allowed.</small>
+                                </div>
 
                                 <button type="submit" class="btn btn-primary">Добавить</button>
                             </form>

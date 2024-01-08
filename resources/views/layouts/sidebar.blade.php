@@ -54,234 +54,25 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('client')}} " class="nav-link">
+                            <a href="{{route('teachers.index')}}" class="nav-link">
                                 <i class="fa-solid fa-users nav-icon"></i>
                                 <p>Список клиентов</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{route('client.create')}}" class="nav-link">
+                            <a href="{{route('teachers.create')}}" class="nav-link">
                                 <i class="fa fa-user nav-icon"></i>
                                 <p>Добавить клиента</p>
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="{{route('code.create')}}" class="nav-link">
-                                <i class="fa fa-code nav-icon"></i>
-                                <p>Создания кода для клиента</p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{route('code.index')}}" class="nav-link">
-                                <i class="fa fa-code nav-icon"></i>
-                                <p>Список кодов клиента</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-truck"></i>
-                        <p>
-                            Груз
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('cargo.create')}}" class="nav-link">
-                                <i class="fa fa-truck-arrow-right nav-icon"></i>
-                                <p>Добавить груза</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('cargo.index')}} " class="nav-link">
-                                <i class="fa-solid fa-truck-fast nav-icon"></i>
-                                <p>Список грузов</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('cargo.index')}} " class="nav-link">
-                                <i class="fa-solid fa-list-check nav-icon"></i>
-                                <p>Содержимое груза</p>
-                            </a>
-                        </li>
 
 
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-file-invoice"></i>
-                        <p>
-                            Инвойс
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('invoice')}}" class="nav-link">
-                                <i class="fa fa-file-lines  nav-icon"></i>
-                                <p>Список инвойсов</p>
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{route('invoice.create')}}" class="nav-link">
-                                <i class="fa-solid fa-calendar-plus nav-icon "></i>
-                                <p>Добавить инвойс</p>
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{route('invoice.client')}}" class="nav-link">
-                                <i class="fa-solid fa-calendar-plus nav-icon "></i>
-                                <p>Инвойс по клиентам</p>
-                            </a>
-
-                        </li>
-
-                    </ul>
-
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-warehouse"></i>
-                        <p>
-                            Склад
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('invoice')}}" class="nav-link">
-                                <i class="fa fa-file-lines  nav-icon"></i>
-                                <p>Список инвойсов</p>
-                            </a>
-
-                        </li>
 
 
-                    </ul>
-
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-dollar-sign"></i>
-                        <p>
-                            Долги
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('unpaid-clients')}}" class="nav-link">
-                                <i class="fa-solid fa-money-check-dollar nav-icon"></i>
-                                <p>Должники</p>
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fa fa-money-bill-trend-up  nav-icon"></i>
-                                <p>Клиенты с + балансом</p>
-                            </a>
-
-                        </li>
-
-                    </ul>
-
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa-solid fa-wallet"></i>
-                        <p>
-                            Приход
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('cash.income')}}" class="nav-link">
-                                <i class="fa-solid fa-folder-plus nav-icon"></i>
-                                <p>Новый приход</p>
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{route('cash.income-list')}}" class="nav-link">
-                                <i class="fa-solid fa-landmark nav-icon"></i>
-                                <p>История прихода</p>
-                            </a>
-
-                        </li>
-                    </ul>
-
-                </li>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa-solid fa-money-check-dollar"></i>
-                        <p>
-                            Расход
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('expense.create')}}" class="nav-link">
-                                <i class="fa-solid fa-folder-plus nav-icon"></i>
-                                <p>Новый расход</p>
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{route('expense.list')}}" class="nav-link">
-                                <i class="fa-solid fa-landmark nav-icon"></i>
-                                <p>История расходов</p>
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </li>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-line"></i>
-                        <p>
-                            Отчёт
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fa-solid fa-calendar-days nav-icon"></i>
-                                <p>Отчёт по итогу меясца</p>
-                            </a>
-
-                        <li class="nav-item">
-                            <a href="{{route('expense.index')}}" class="nav-link">
-                                <i class="fa-solid fa-landmark nav-icon"></i>
-                                <p>Расход</p>
-                            </a>
-                        </li>
-
-                        </li>
-
-                    </ul>
-
-                </li>
 
                 <!-- <li class="nav-item">
                      <a href="#" class="nav-link">
