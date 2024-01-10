@@ -21,7 +21,7 @@
                 @endif
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Создание группы</h1>
+                        <h1>Создание курса</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -41,34 +41,15 @@
                     <div class="col-12">
                         <div class="card card-outline card-info">
                             <div class="card-header d-flex p-0">
-                                <h3 class="card-title p-3">Создание новой группы</h3>
+                                <h3 class="card-title p-3">Создание нового курса</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="{{ route('groups.store') }}" method="POST">
+                                <form action="{{ route('courses.store') }}" method="POST">
                                     @csrf
                                     <div class="form-group">
                                         <label for="name">Название:</label>
-                                        <input type="text" class="form-control" name="name" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="price">Цена:</label>
-                                        <input type="number" class="form-control" name="price" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="start_date">Дата начала:</label>
-                                        <input type="date" class="form-control" name="start_date">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="end_date">Дата окончание Date:</label>
-                                        <input type="date" class="form-control" name="end_date">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="shift">Shift:</label>
-                                        <select class="form-control" name="shift">
-                                            <option value="1">Shift 1</option>
-                                            <option value="2">Shift 2</option>
-                                        </select>
+                                        <input type="text" name="name" class="form-control" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Создать</button>
                                 </form>

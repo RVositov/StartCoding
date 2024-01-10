@@ -32,31 +32,12 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="{{ route('groups.update', $group->id) }}" method="POST">
+                                <form action="{{ route('courses.update', $course->id) }}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <div class="form-group">
-                                        <label for="name">Название</label>
-                                        <input type="text" class="form-control" name="name" value="{{ $group->name }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="price">Цена:</label>
-                                        <input type="number" class="form-control" name="price" value="{{ $group->price }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="start_date">Дата начала:</label>
-                                        <input type="date" class="form-control" name="start_date" value="{{ $group->start_date }}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="end_date">Дата окончание:</label>
-                                        <input type="date" class="form-control" name="end_date" value="{{ $group->end_date }}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="shift">Shift:</label>
-                                        <select class="form-control" name="shift">
-                                            <option value="1" {{ $group->shift == 1 ? 'selected' : '' }}>Shift 1</option>
-                                            <option value="2" {{ $group->shift == 2 ? 'selected' : '' }}>Shift 2</option>
-                                        </select>
+                                        <label for="name">Название:</label>
+                                        <input type="text" name="name" class="form-control" value="{{ $course->name }}" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Изменить</button>
                                 </form>
