@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('timetables', function (Blueprint $table) {
-            $table->foreign(['group_id'])->references(['id'])->on('groups')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+            $table->foreign(['classroom_id'])->references(['id'])->on('classrooms')->onUpdate('NO ACTION')->onDelete('NO ACTION');
             $table->foreign(['teacher_id'])->references(['id'])->on('teachers')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+            $table->foreign(['group_id'])->references(['id'])->on('groups')->onUpdate('NO ACTION')->onDelete('NO ACTION');
         });
     }
 
@@ -27,8 +28,9 @@ return new class extends Migration
     public function down()
     {
         Schema::table('timetables', function (Blueprint $table) {
-            $table->dropForeign('timetables_group_id_foreign');
+            $table->dropForeign('timetables_classroom_id_foreign');
             $table->dropForeign('timetables_teacher_id_foreign');
+            $table->dropForeign('timetables_group_id_foreign');
         });
     }
 };

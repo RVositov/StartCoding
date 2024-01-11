@@ -11,8 +11,9 @@ class TimeTable extends Model
     protected $fillable = [
         'group_id',
         'teacher_id',
+        'classroom_id',
         'day',
-        'updated_at',
-        'created_at',
+        'lesson_time'
     ];
+
 }

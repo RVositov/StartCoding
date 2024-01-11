@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\SchoolController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StudentController;
+
 
 
 /*
@@ -40,6 +43,9 @@ Route::middleware(['auth.redirect'])->group(function () {
 
     Route::resource('teachers', TeacherController::class);
     Route::resource('groups', GroupController::class);
+    Route::resource('students', StudentController::class);
+
+    Route::get('/schools/{city_id}', [SchoolController::class, 'getSchoolsByCity'])->name('schools.by_city');
 
 
 

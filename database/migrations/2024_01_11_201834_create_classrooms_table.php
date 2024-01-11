@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('timetables', function (Blueprint $table) {
+        Schema::create('classrooms', function (Blueprint $table) {
             $table->integer('id', true);
-            $table->integer('group_id')->index('timetables_group_id_foreign');
-            $table->integer('teacher_id')->index('timetables_teacher_id_foreign');
-            $table->integer('day');
-            $table->date('updated_at')->nullable();
-            $table->date('created_at')->nullable();
+            $table->string('name', 100);
         });
     }
 
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('timetables');
+        Schema::dropIfExists('classrooms');
     }
 };

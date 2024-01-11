@@ -22,4 +22,18 @@ class Student extends Model
         'updated_at',
         'created_at',
     ];
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class, 'student_groups', 'student_id', 'group_id');
+    }
+     
+    public function school()
+    {
+        return $this->belongsTo(School::class, 'school_id');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
 }

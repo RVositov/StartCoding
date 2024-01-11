@@ -19,4 +19,8 @@ class Group extends Model
         'created_at',
         'updated_at',
     ];
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'students_groups', 'group_id', 'student_id');
+    }
 }
