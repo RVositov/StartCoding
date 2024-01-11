@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CargoLogix | Вход в систему</title>
+    <title>StartCoding | Вход в систему</title>
 
     <!-- Google Font: Source Sans Pro -->
     <!-- Font Awesome -->

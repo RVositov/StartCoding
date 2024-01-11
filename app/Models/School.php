@@ -14,4 +14,8 @@ class School extends Model
         'updated_at',
         'created_at',
     ];
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
 }
