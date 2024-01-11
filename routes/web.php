@@ -9,6 +9,7 @@ use App\Http\Controllers\StudentController;
 
 
 
+use App\Http\Controllers\CourseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,9 +48,10 @@ Route::middleware(['auth.redirect'])->group(function () {
 
     Route::get('/schools/{city_id}', [SchoolController::class, 'getSchoolsByCity'])->name('schools.by_city');
 
-
-
+    Route::resource('courses', CourseController::class);
 
 });
 
-
+Route::get('/groups/{group}/edit', 'GroupController@edit')->name('groups.edit');
+Route::resource('groups', 'GroupController');
+Route::resource('groups', GroupController::class);
