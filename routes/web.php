@@ -6,6 +6,7 @@ use App\Http\Controllers\GroupController;
 use App\Http\Controllers\UserController;
 
 
+use App\Http\Controllers\CourseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,9 +42,10 @@ Route::middleware(['auth.redirect'])->group(function () {
     Route::resource('teachers', TeacherController::class);
     Route::resource('groups', GroupController::class);
 
-
-
+    Route::resource('courses', CourseController::class);
 
 });
 
-
+Route::get('/groups/{group}/edit', 'GroupController@edit')->name('groups.edit');
+Route::resource('groups', 'GroupController');
+Route::resource('groups', GroupController::class);
