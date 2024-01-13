@@ -7,10 +7,20 @@ class Group extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'course_id', 'status_id', 'name', 'price', 'start_date', 'end_date', 'shift'
+      'course_id',
+      'status_id',
+      'name',
+      'price',
+      'start_date',
+      'end_date',
+      'shift',
+      'created_at',
+      'updated_at'
     ];
-    public function students()
+    public function GroupStatus()
     {
-        return $this->belongsToMany(Student::class, 'students_groups', 'group_id', 'student_id');
+        return $this->belongsTo(GroupStatus::class, 'status_id');
     }
+
 }
+

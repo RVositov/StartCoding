@@ -8,14 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class School extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'city_id',
-        'name',
-        'updated_at',
-        'created_at',
-    ];
+
+    protected $fillable = ['city_id', 'name', 'created_at', 'updated_at'];
+
+    // Определите отношение к городу
     public function city()
     {
-        return $this->belongsTo(City::class);
+        return $this->belongsTo(City::class, 'city_id');
     }
 }
