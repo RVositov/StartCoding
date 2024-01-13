@@ -1,11 +1,14 @@
 <?php
 
-use App\Http\Controllers\SchoolController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
+
+use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\ClassroomController;
+
 
 
 
@@ -55,3 +58,9 @@ Route::middleware(['auth.redirect'])->group(function () {
 Route::get('/groups/{group}/edit', 'GroupController@edit')->name('groups.edit');
 Route::resource('groups', 'GroupController');
 Route::resource('groups', GroupController::class);
+Route::resource('schools', SchoolController::class);
+Route::put('/schools/{id}', 'SchoolController@update')->name('schools.update');
+Route::delete('/schools/{id}', 'SchoolController@destroy')->name('schools.destroy');
+Route::resource('classrooms', ClassroomController::class);
+
+

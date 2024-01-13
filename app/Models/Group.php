@@ -3,17 +3,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
-
 class Group extends Model
 {
+    use HasFactory;
     protected $fillable = [
-        'course_id', 'status_id', 'name', 'price', 'start_date', 'end_date', 'shift',
-    ];
-    public function students()
+        'course_id',
+	'status_id',
+	'name',
+	'price',
+	'start_date',
+	'end_date',
+	'shift',
+	'created_at',
+	'updated_at'];
+    public function GroupStatus()
     {
-        return $this->belongsToMany(Student::class, 'students_groups', 'group_id', 'student_id');
+        return $this->belongsTo(GroupStatus::class, 'status_id');
     }
+
 }
+
