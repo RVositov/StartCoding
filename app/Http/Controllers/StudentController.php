@@ -14,7 +14,7 @@ class StudentController extends Controller
     public function index()
     {
         //$students = Student::with('groups')->get();
-        $students = Student::with(['groups', 'school', 'city'])->orderByDesc('updated_at')->get();
+            $students = Student::with(['groups', 'school', 'city'])->orderByDesc('updated_at')->get();
 
         return view('students.index', compact('students'));
     }
@@ -72,7 +72,7 @@ class StudentController extends Controller
     {
         $cities = City::all(); // Assuming you have a City model
         $groups = Group::all(); // Assuming you have a Group model
-        $schools = School::all(); // Assuming you have a School model
+        $schools = School::all(); // Assuming you have a schools model
         return view('students.edit', compact('student', 'groups', 'cities','schools'));
     }
 

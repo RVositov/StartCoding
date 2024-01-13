@@ -58,9 +58,15 @@
                                             <option value="2" {{ $group->shift == 2 ? 'selected' : '' }}>Shift 2</option>
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <select name="status_id" id="status_id" class="form-control">
+                                            @foreach($group_statuses as $group_status)
+                                                <option value="{{$group_status->id}}" {{ $group->status_id == $group_status->id ? 'selected' : '' }}>{{$group_status->status}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
                                     <button type="submit" class="btn btn-primary">Изменить</button>
-                                </form>
-                            </div>
                             <!-- /.card-body -->
                         </div>
                         <!-- /.card -->

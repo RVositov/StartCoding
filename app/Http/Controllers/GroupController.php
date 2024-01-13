@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
+use App\Models\GroupStatus;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -15,7 +16,8 @@ public function index()
 
 public function create()
 {
-    return view('groups.create');
+    $group_statuses = GroupStatus::all();
+    return view('groups.create', compact('group_statuses'));
 }
 
 public function store(Request $request)
@@ -26,13 +28,16 @@ public function store(Request $request)
 
 public function edit(Group $group)
 {
-    return view('groups.edit', compact('group'));
+    $group_statuses = GroupStatus::all();
+    return view('groups.edit', compact('group', 'group_statuses'));
 }
 
 public function update(Request $request, Group $group)
 {
     $group->update($request->all());
-    return redirect()->route('groups.index');
+    $groups = Group::with('GroupStatus')->get();
+
+    return redirect()->route('groups.index','groups');
 }
 
 public function destroy(Group $group)

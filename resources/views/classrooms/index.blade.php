@@ -20,7 +20,7 @@
                 @endif
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Группы</h1>
+                        <h1>Клиенты</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -41,11 +41,11 @@
 
                         <div class="card">
                             <div class="card-header d-flex p-0">
-                                <h3 class="card-title p-3">Информация о группах</h3>
+                                <h3 class="card-title p-3">Информация о классах</h3>
                                 <ul class="nav nav-pills ml-auto p-2">
                                     <li class="nav-item">
-                                        <a class="btn bg-gradient-info" href="{{ route('groups.create') }}">
-                                            <i class="fa-solid fa-calendar-plus"></i>&nbsp; Добавить группу
+                                        <a class="btn bg-gradient-info" href="{{ route('classrooms.create') }}">
+                                            <i class="fa-solid fa-calendar-plus"></i>&nbsp; Добавить класс
                                         </a>
                                     </li>
                                 </ul>
@@ -56,31 +56,22 @@
                                     <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Название</th>
-                                        <th>Цена</th>
-                                        <th>Дата начала</th>
-                                        <th>Дата окончание</th>
-                                        <th>Shift</th>
-                                        <th>Сатус</th>
+                                        <th>Имя</th>
                                         <th>Действие</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($groups as $group)
+                                    @foreach ($classrooms as $classroom)
                                         <tr>
-                                            <td>{{ $group->id }}</td>
-                                            <td>{{ $group->name }}</td>
-                                            <td>{{ $group->price }}</td>
-                                            <td>{{ $group->start_date }}</td>
-                                            <td>{{ $group->end_date }}</td>
-                                            <td>{{ $group->shift }}</td>
-                                            <td>{{ $group->GroupStatus->status }}</td>
+                                            <td>{{ $classroom->id }}</td>
+                                            <td>{{ $classroom->name }}</td>
                                             <td>
-                                                <a href="{{ route('groups.edit', $group->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                                <form action="{{ route('groups.destroy', $group->id) }}" method="POST" style="display: inline;">
+                                                <a href="#" class="btn btn-info">View</a>
+                                                <a href="{{ route('classrooms.edit', $classroom->id) }}" class="btn btn-warning">Edit</a>
+                                                <form action="{{ route('classrooms.destroy', $classroom->id) }}" method="POST" style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
