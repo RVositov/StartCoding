@@ -52,7 +52,6 @@ class ClassroomController extends Controller
     public function destroy(Classroom $classroom)
     {
         $classroom->delete();
-
         return redirect()->route('classrooms.index')->with('success', 'Класс успешно удале');
     }
 }
