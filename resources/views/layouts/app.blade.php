@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="{{asset('dist/img/favicon.png')}}">
 
-    <title>Система логистики | {{ Route::currentRouteName() }}</title>
+    <title>StartCoding | {{ Route::currentRouteName() }}</title>
 
     <!-- Google Font: Source Sans Pro -->
     <!-- <link rel="stylesheet"
