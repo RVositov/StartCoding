@@ -6,7 +6,7 @@
     // Function to fetch and populate schools based on the selected city
     function fetchSchools(cityId) {
         $.ajax({
-            url: '/schools/' + cityId,
+            url: '/getSchoolsByCity/' + cityId,
             type: 'GET',
             success: function (data) {
                 var schoolSelect = $('#schoolSelect');

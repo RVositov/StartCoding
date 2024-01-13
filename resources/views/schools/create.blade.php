@@ -45,8 +45,8 @@
                                     <div class="form-group">
                                         <label for="class">Город:</label>
                                         <select name="city_id" id="citySelect" class="form-control">
-                                            @foreach($group_statuses as $statuses)
-                                                <option value="{{$statuses->status_id}}">{{$statuses->name}}</option>
+                                            @foreach($cities as $city)
+                                                <option value="{{$city->id}}">{{$city->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -70,6 +70,5 @@
         <!-- /.content -->
     </div>
 
-    <!-- /.content-wrapper -->
-    <script src="{{ asset('js/students.js') }}"></script>
+
 @endsection

@@ -40,17 +40,16 @@ Route::middleware(['auth.redirect'])->group(function () {
     Route::get('/' , function (){
         return view('main.index');
     })->name('dashboard');
-    
-    Route::get('/schools/{city_id}', [SchoolController::class, 'getSchoolsByCity'])->name('schools.by_city');
-   
+
+    Route::get('/getSchoolsByCity/{city_id}', [SchoolController::class, 'getSchoolsByCity'])->name('schools.by_city');
+
     Route::resource('teachers', TeacherController::class);
     Route::resource('groups', GroupController::class);
     Route::resource('students', StudentController::class);
     Route::resource('courses', CourseController::class);
     Route::resource('groups', GroupController::class);
-    Route::resource('timetables', TimeTableController::class); 
-    Route::resource('groups', 'GroupController');
+    Route::resource('timetables', TimeTableController::class);
     Route::resource('schools', SchoolController::class);;
     Route::resource('classrooms', ClassroomController::class);
-  
+
 });
