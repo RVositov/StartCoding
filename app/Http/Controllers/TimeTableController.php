@@ -14,10 +14,9 @@ class TimeTableController extends Controller
     {
 
         $timetables = Timetable::all();
-
-        return view('timetables.index', compact('timetables'));
         $weekDays = TimeTable::WEEK_DAYS;
-        return  view('TimeTables.create', compact('groups','teachers','classrooms', 'weekDays'));
+
+        return view('timetables.index', compact('timetables','weekDays'));
     }
 
 

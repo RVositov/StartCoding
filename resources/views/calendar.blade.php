@@ -42,56 +42,39 @@
                     <div class="card">
                         <div class="card-header d-flex p-0">
                             <h3 class="card-title p-3">Информация </h3>
-                            <ul class="nav nav-pills ml-auto p-2">
-                                <li class="nav-item">
-                                    <a class="btn bg-gradient-info" href="{{ route('timetables.create') }}">
-                                        <i class="fa-solid fa-calendar-plus"></i>&nbsp; Добавить
-                                    </a>
-                                </li>
-                            </ul>
+
                         </div>
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-striped">
+                            <table class="table table-bordered">
                                 <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Группа</th>
-                                    <th>Учитель</th>
-                                    <th>Аудитория</th>
-                                    <th>День недели</th>
-                                    <th>Начало урока</th>
-                                    <th>Конец урока</th>
-                                    <th>Действия</th>
-                                </tr>
+                                <th width="125">Time</th>
+                                @foreach($weekDays as $day)
+                                    <th>{{ $day }}</th>
+                                @endforeach
                                 </thead>
                                 <tbody>
 
-                                @foreach($timetables as $timetable)
+                                @foreach($calendarData as $time => $days)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $timetable->group->name }}</td>
-                                        <td>{{ $timetable->teacher->surname }} {{ $timetable->teacher->name }}</td>
-                                        <td>{{ $timetable->classroom->name }}</td>
-                                        <td>{{ $weekDays[$timetable->day] }}</td>
-                                        <td>{{ $timetable->start_time }}</td>
-                                        <td>{{ $timetable->end_time }}</td>
-
-
                                         <td>
-                                            <a href="{{ route('timetables.edit', $timetable->id) }}" class="btn btn-warning">Редактировать</a>
-                                            <form action="{{ route('timetables.destroy', $timetable->id) }}" method="POST" style="display: inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Вы уверены, что хотите удалить эту запись?')">Удалить</button>
-                                            </form>
-
+                                            {{ $time }}
                                         </td>
+                                        @foreach($days as $value)
+                                            @if (is_array($value))
+
+                                                <td rowspan="{{ $value['rowspan'] }}" class="align-middle text-center" style="background-color:#f0f0f0">
+                                                    <br>
+                                                    Teacher: {{$value['teacher']}}<br>
+                                                    Group: {{$value['group']}}<br>
+                                                    Classroom: {{$value['classroom']}}
+                                                </td>
+                                            @elseif ($value === 1)
+                                                <td></td>
+                                            @endif
+                                        @endforeach
                                     </tr>
                                 @endforeach
                                 </tbody>
-                                <tfoot>
-
-                                </tfoot>
                             </table>
                         </div>
 
