@@ -106,6 +106,5 @@
         <!-- /.content -->
     </div>
 
-    <!-- /.content-wrapper -->
-    <script src="{{ asset('js/students.js') }}"></script>
+
 @endsection

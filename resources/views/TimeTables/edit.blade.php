@@ -32,77 +32,57 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <form method="POST" action="{{ route('students.update', $student->id) }}" >
+                            <form action="{{ route('timetables.update', $timetable->id) }}" method="post">
                                 @csrf
                                 @method('PUT')
 
                                 <div class="form-group">
-                                    <label for="name">Имя:</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Имя" value="{{ $student->name }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="surname">Фамилия:</label>
-                                    <input type="text" name="surname" class="form-control" placeholder="Фамилия" value="{{ $student->surname }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="phone">Телефон:</label>
-                                    <input type="tel" name="phone" class="form-control" placeholder="Телефон" value="{{ $student->phone }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="birthday">Дата рождения:</label>
-                                    <input type="date" name="birthday" class="form-control" placeholder="Дата рождения" value="{{ $student->birthday }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="class">Адрес:</label>
-                                    <input type="text" name="address" class="form-control" placeholder="Адрес" value="{{ $student->address }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="class">Класс:</label>
-                                    <input type="number" name="class" class="form-control" placeholder="Класс" value="{{ $student->class }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="class">Город:</label>
-                                    <select name="city_id" id="citySelect" class="form-control">
-                                        @foreach($cities as $city)
-                                            <option value="{{ $city->id }}" {{ $city->id == $student->city_id ? 'selected' : '' }}>{{ $city->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="class">Школа:</label>
-                                    <select name="school_id" id="schoolSelect" class="form-control">
-                                        @foreach($schools as $school)
-                                            <option value="{{ $school->id }}" {{ $school->id == $student->school_id ? 'selected' : '' }}>{{ $school->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="class">Группы:</label>
-                                    <select name="groups_id[]" id="groupsSelect" class=" form-control select2" multiple="multiple">
+                                    <label for="group_id">Группа:</label>
+                                    <select name="group_id" class="form-control">
                                         @foreach($groups as $group)
-                                            <option value="{{ $group->id }}" {{ in_array($group->id, $student->groups->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $group->name }}</option>
+                                            <option value="{{ $group->id }}" @if($group->id == $timetable->group_id) selected @endif>{{ $group->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="class">Скидки:</label>
-                                    <input type="number" name="discount" value="{{ $student->discount }}" class="form-control" placeholder="Скидки">
+                                    <label for="teacher_id">Учитель:</label>
+                                    <select name="teacher_id" class="form-control">
+                                        @foreach($teachers as $teacher)
+                                            <option value="{{ $teacher->id }}" @if($teacher->id == $timetable->teacher_id) selected @endif>{{ $teacher->surname }} {{ $teacher->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
-                                <div class="form-group custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                    <input type="checkbox" name="is_active" class="custom-control-input" id="customSwitch3" {{ $student->is_active ? 'checked' : '' }}>
-                                    <label class="custom-control-label" for="customSwitch3">Активность</label>
+                                <div class="form-group">
+                                    <label for="classroom_id">Аудитория:</label>
+                                    <select name="classroom_id" class="form-control">
+                                        @foreach($classrooms as $classroom)
+                                            <option value="{{ $classroom->id }}" @if($classroom->id == $timetable->classroom_id) selected @endif>{{ $classroom->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Изменить</button>
+
+                                <div class="form-group">
+                                    <label for="day">День недели:</label>
+                                    <select name="day" class="form-control">
+                                        @foreach($weekDays as $id => $week)
+                                            <option value="{{ $id }}" @if($id == $timetable->day) selected @endif>{{ $week }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="start_time">Начало урока:</label>
+                                    <input type="time" name="start_time" class="form-control" value="{{ $timetable->start_time }}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="end_time">Конец урока:</label>
+                                    <input type="time" name="end_time" class="form-control" value="{{ $timetable->end_time }}">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Обновить</button>
                             </form>
                         </div>
                         <!-- /.card-body -->
