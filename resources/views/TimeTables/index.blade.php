@@ -44,7 +44,7 @@
                             <h3 class="card-title p-3">Информация </h3>
                             <ul class="nav nav-pills ml-auto p-2">
                                 <li class="nav-item">
-                                    <a class="btn bg-gradient-info" href="{{ route('students.create') }}">
+                                    <a class="btn bg-gradient-info" href="{{ route('timetables.create') }}">
                                         <i class="fa-solid fa-calendar-plus"></i>&nbsp; Добавить
                                     </a>
                                 </li>
@@ -53,47 +53,38 @@
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
-                                    <tr>
-                                        <th width="5%">№</th>
-                                        <th>Фамилия</th>
-                                        <th>Имя</th>
-                                        <th>Телефон</th>
-                                        <th>Дата рождения</th>
-                                        <th>Школа</th>
-                                        <th>Город</th>
-                                        <th>Группы</th>
-                                        <th>Действия</th>
-                                    </tr>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Группа</th>
+                                    <th>Учитель</th>
+                                    <th>Аудитория</th>
+                                    <th>День недели</th>
+                                    <th>Начало урока</th>
+                                    <th>Конец урока</th>
+                                    <th>Действия</th>
+                                </tr>
                                 </thead>
                                 <tbody>
 
-                                @foreach($students as $student)
+                                @foreach($timetables as $timetable)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $student->name }}</td>
-                                        <td>{{ $student->surname }}</td>
-                                        <td>{{ $student->phone }}</td>
-                                        <td>{{ $student->birthday }}</td>
-                                        <td>{{ $student->city->name}}</td>
-                                        <td>{{ $student->school->name}}</td>
-                                        <td>
-                                            @if ($student->groups->isNotEmpty())
-                                                    @foreach ($student->groups as $group)
-                                                        <span class="badge badge-pill badge-info"> {{ $group->name }}</span>
-                                                    @endforeach
-                                            @else
-                                                <span class="badge badge-pill badge-danger"> без <группы></группы></span>
-                                            @endif
-                                        </td>
+                                        <td>{{ $timetable->group->name }}</td>
+                                        <td>{{ $timetable->teacher->surname }} {{ $timetable->teacher->name }}</td>
+                                        <td>{{ $timetable->classroom->name }}</td>
+                                        <td>{{ \App\Models\TimeTable::WEEK_DAYS[$timetable->day] }}</td>
+                                        <td>{{ $timetable->start_time }}</td>
+                                        <td>{{ $timetable->end_time }}</td>
+
 
                                         <td>
-                                            <a href="{{ route('students.show', $student->id) }}" class="btn btn-info btn-sm">Показать</a>
-                                            <a href="{{ route('students.edit', $student->id) }}" class="btn btn-warning btn-sm">Изменить</a>
-                                            <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display: inline;">
+                                            <a href="{{ route('timetables.edit', $timetable->id) }}" class="btn btn-warning">Редактировать</a>
+                                            <form action="{{ route('timetables.destroy', $timetable->id) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Вы уверены, что хотите удалить эту запись?')">Удалить</button>
                                             </form>
+
                                         </td>
                                     </tr>
                                 @endforeach
