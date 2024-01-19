@@ -26,10 +26,15 @@ class Student extends Model
     {
         return $this->belongsToMany(Group::class, 'student_groups', 'student_id', 'group_id');
     }
-     
+
     public function school()
     {
         return $this->belongsTo(School::class, 'school_id');
+    }
+
+    public function income()
+    {
+        return $this->belongsTo(Income::class, 'student_id');
     }
 
     public function city()

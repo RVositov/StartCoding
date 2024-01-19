@@ -30,7 +30,7 @@
                     <div class="small-box bg-info" bis_skin_checked="1">
                         <div class="inner" bis_skin_checked="1">
                             <h3></h3>
-                            <p>Количество клиентов</p>
+                            <p>Количество---- клиентов</p>
                         </div>
                         <div class="icon" bis_skin_checked="1">
                             <i class="ion ion-bag"></i>
@@ -80,6 +80,11 @@
                         <a href="#" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
+
+                <!--  Список курсов -->
+
+
+
 
             </div>
 

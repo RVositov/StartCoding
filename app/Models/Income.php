@@ -11,7 +11,13 @@ class Income extends Model
     protected $fillable = [
         'student_id',
         'price',
+        'date',
+        'created_by',
         'updated_at',
         'created_at',
     ];
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 }
