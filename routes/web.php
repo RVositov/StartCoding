@@ -10,6 +10,8 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\JournalController;
+use App\Http\Controllers\IncomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,10 +55,10 @@ Route::middleware(['auth.redirect'])->group(function () {
     Route::resource('schools', SchoolController::class);;
     Route::resource('classrooms', ClassroomController::class);
     Route::resource('journals', JournalController::class);
-    // routes/web.php
     Route::post('/journal/store',[JournalController::class,'store'])->name('journal.store');
     Route::get('/journal/{groupId}/{month?}/{year?}',[JournalController::class,'edit'])->name('journal.edit');
 
-
+    Route::resource('incomes',IncomeController::class);
+    Route::get('/incomes/student/{id}', [IncomeController::class, 'showStudent'])->name('incomes.showStudent');
 
 });

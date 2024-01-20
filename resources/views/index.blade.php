@@ -120,7 +120,7 @@
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->date }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-info" onclick="fnShow({{ $post->id }}, '{{ $post->title }}', '{{ $post->date }}')" 
+                                            <a href="#" class="btn btn-sm btn-info" onclick="fnShow({{ $post->id }}, '{{ $post->title }}', '{{ $post->date }}')"
                                                 data-toggle="modal">
                                                 <i class="fa-solid fa-eye"></i>&nbsp; Show
                                             </a>
@@ -170,10 +170,10 @@
                     </button>
               </div>
               <div class="modal-body">
-                    
+
               </div>
               <div class="modal-footer">
-                    
+
               </div>
            </div>
         </div>

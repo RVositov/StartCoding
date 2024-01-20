@@ -3,7 +3,7 @@
     <div class="float-right d-none d-sm-block">
         <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2024 <a href="#"></a>.</strong> All rights reserved. Designed by RV
+    <strong>Copyright &copy; 2024 <a href="#"></a>.</strong> All rights reserved. Designed by RV and ustod YD
 </footer>
 
 <!-- Control Sidebar -->
