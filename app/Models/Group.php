@@ -21,6 +21,14 @@ class Group extends Model
     {
         return $this->belongsTo(GroupStatus::class, 'status_id');
     }
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'student_groups',  'group_id', 'student_id');
+    }
+    public function timetables()
+    {
+        return $this->hasMany(Timetable::class, 'group_id');
+    }
 
 }
 

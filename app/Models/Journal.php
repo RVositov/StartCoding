@@ -9,11 +9,13 @@ class Journal extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'timetable_id',
+        'group_id',
+        'student_id',
+        'mark_id',
         'date',
-        'mark',
-        'teacher_id',
         'updated_at',
         'created_at',
+        'updated_by',
+        'created_by',
     ];
 }
