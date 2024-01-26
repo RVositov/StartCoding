@@ -89,7 +89,7 @@
 
                                     <div class="form-group">
                                         <label for="class">Группы:</label>
-                                        <select name="groups_id[]" id="" class="select2 form-control" multiple="multiple">
+                                        <select name="groups_id[]" id="select2" class="select2 form-control" multiple="multiple">
                                             @foreach($groups as $group)
                                                 <option value="{{$group->id}}">{{$group->name}}</option>
                                             @endforeach
@@ -121,7 +121,11 @@
         </section>
         <!-- /.content -->
     </div>
-
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2()
+        });
+    </script>
     <!-- /.content-wrapper -->
     <script src="{{ asset('js/students.js') }}"></script>
 @endsection

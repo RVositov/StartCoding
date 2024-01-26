@@ -1,6 +1,6 @@
-    $(document).ready(function() {
-    $('.select2').select2()
-    });
+        $(document).ready(function() {
+        $('.select2').select2()
+        });
 
     $(document).ready(function () {
     // Function to fetch and populate schools based on the selected city

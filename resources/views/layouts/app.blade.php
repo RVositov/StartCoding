@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+
 
     <!-- jQuery -->
     <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
@@ -76,7 +76,5 @@
     <script src="{{ asset('dist/js/demo.js') }}"></script>
     <!-- Page specific script -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <!-- Page chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </html>
