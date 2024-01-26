@@ -56,8 +56,8 @@
                                     </div>
 
 
-                                    <label for="date">Date:</label>
-                                    <input type="date" name="date" value="{{ $income->date }}" class="form-control"  required>
+                                    <label for="Date">Date:</label>
+                                    <input type="datetime-local" name="date" value="{{ $income->date }}" class="form-control"  required>
                                     <br>
 
                                     <button type="submit" class="btn btn-primary">Обновить оплату</button>

@@ -20,4 +20,13 @@ class Income extends Model
     {
         return $this->belongsTo(Student::class);
     }
+    public static function getMonthlyIncomes()
+    {
+        return self::selectRaw('YEAR(date) as year, MONTH(date) as month, SUM(price) as total_income')
+            ->groupByRaw('YEAR(date), MONTH(date)')
+            ->orderByRaw('year, month')
+            ->get();
+    }
+
 }
+

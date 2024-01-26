@@ -29,13 +29,13 @@
 
                     <div class="small-box bg-info" bis_skin_checked="1">
                         <div class="inner" bis_skin_checked="1">
-                            <h3></h3>
-                            <p>Количество---- клиентов</p>
+                            <h3>{{ $studentsCount }} </h3>
+                            <p>Количество студентов</p>
                         </div>
                         <div class="icon" bis_skin_checked="1">
                             <i class="ion ion-bag"></i>
                         </div>
-                        <a href="" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/students" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
@@ -43,13 +43,13 @@
 
                     <div class="small-box bg-success" bis_skin_checked="1">
                         <div class="inner" bis_skin_checked="1">
-                            <h3></h3>
-                            <p>Количество инвойсов</p>
+                            <h3>{{ $teachersCount }}</h3>
+                            <p>Количество учителей</p>
                         </div>
                         <div class="icon" bis_skin_checked="1">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/teachers" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
@@ -57,13 +57,13 @@
 
                     <div class="small-box bg-warning" bis_skin_checked="1">
                         <div class="inner" bis_skin_checked="1">
-                            <h3>44</h3>
-                            <p>Количество клиентов</p>
+                            <h3>{{ $incomesSum }}STJ</h3>
+                            <p>Доход</p>
                         </div>
                         <div class="icon" bis_skin_checked="1">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/incomes" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
@@ -71,31 +71,77 @@
 
                     <div class="small-box bg-danger" bis_skin_checked="1">
                         <div class="inner" bis_skin_checked="1">
-                            <h3>65</h3>
-                            <p>Количество должников</p>
+                            <h3>{{ $expensesSum }}STJ</h3>
+                            <p>Расход</p>
                         </div>
                         <div class="icon" bis_skin_checked="1">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/expenses" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-
-                <!--  Список курсов -->
-
-
-
-
             </div>
+            </div>
+        </section>
 
-
-
-    </section>
-    <!-- /.content -->
-</div>
-
+    <div class="row col-sm-12">
+    <!--  Список доходов -->
+        <div class="col-sm-6">
+    <div class="card">
+        <div class="card-header border-0">
+            <h3 class="card-title">Доход на {{ $currentMonth }} </h3>
+        </div>
+        <div class="card-body table-responsive p-0">
+            <table class="table table-striped table-valign-middle">
+                <thead>
+                <tr>
+                    <th>Пользователь</th>
+                    <th>Сумма</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach ($userTotalIncomes as $item)
+                    <tr>
+                        <td>
+                            <img src="/public/dist/img/favicon.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                            {{ $item['user_name'] }}
+                        </td>
+                        <td>{{ $item['total_income'] }}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header border-0">
+                    <h3 class="card-title">Доход на текуший год  </h3>
+                </div>
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-striped table-valign-middle">
+                        <thead>
+                            <tr>
+                                <th>Месяц</th>
+                                <th>Сумма</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($monthlyTotalIncomes as $monthlyIncome)
+                            <tr>
+                                <td>{{ \Carbon\Carbon::create()->month($monthlyIncome->month)->format('F') }}</td>
+                                <td>{{ $monthlyIncome->total }}с</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
 <!-- /.content-wrapper -->
-
+</div>
 <div id="openModal">
     <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
