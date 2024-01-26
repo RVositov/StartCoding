@@ -39,9 +39,10 @@
                     <div class="col-12">
 
 
+
                         <div class="card">
                             <div class="card-header d-flex p-0">
-                                <h3 class="card-title p-3">Информация </h3>
+                                <h3 class="card-title p-3">Отслеживание оплат </h3>
                                 <ul class="nav nav-pills ml-auto p-2">
                                     <li class="nav-item">
                                         <a class="btn bg-gradient-info" href="{{ route('incomes.create') }}">
@@ -51,18 +52,26 @@
                                 </ul>
                             </div>
 
-                            <div class="card" class="form-control">
-                                <h3>Отслеживание оплат</h3>
+                            <div class="card-body">
 
-                                <form action="{{ route('incomes.index') }}" method="GET" >
-                                    <label for="start_date">Начальная дата: </label>
-                                    <input type="date" name="start_date" value="{{ request('start_date') }}" >
+                                    <form action="{{ route('incomes.index') }}" method="GET" >
+                                        <div class="row" style="margin-bottom:10px;">
+                                            <div class="col-sm-4">
+                                                <label for="start_date">Начальная дата: </label>
+                                                <input  class="form-control" type="date" name="start_date" value="{{ request('start_date') }}" >
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="end_date">Конечная дата:</label>
+                                                <input  class="form-control" type="date" name="end_date" value="{{ request('end_date') }}">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="end_date"> &nbsp;</label>
+                                                <button class="form-control btn btn-outline-info" type="submit">Фильтр по датам</button>
+                                            </div>
+                                        </div>
+                                    </form>
 
-                                    <label for="end_date">Конечная дата:</label>
-                                    <input type="date" name="end_date" value="{{ request('end_date') }}">
 
-                                    <button type="submit">Фильтр по датам</button>
-                                </form>
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>

@@ -48,7 +48,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-address-book"></i>
                         <p>
-                            Учителья
+                            Предподователи
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -56,24 +56,22 @@
                         <li class="nav-item">
                             <a href="{{route('teachers.index')}}" class="nav-link">
                                 <i class="fa-solid fa-users nav-icon"></i>
-                                <p>Список клиентов</p>
+                                <p>Список предподователей</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="{{route('teachers.create')}}" class="nav-link">
                                 <i class="fa fa-user nav-icon"></i>
-                                <p>Добавить клиента</p>
+                                <p>Добавить предподователья</p>
                             </a>
                         </li>
-
-
 
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-address-book"></i>
+                        <i class="nav-icon fas fa-people-group "></i>
                         <p>
                             Группы
                             <i class="fas fa-angle-left right"></i>
@@ -82,15 +80,15 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('groups.index')}}" class="nav-link">
-                                <i class="fa-solid fa-users nav-icon"></i>
-                                <p>Список </p>
+                                <i class="fa-solid fa-people-line nav-icon"></i>
+                                <p>Список групп </p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="{{route('groups.create')}}" class="nav-link">
-                                <i class="fa fa-user nav-icon"></i>
-                                <p>Добавить </p>
+                                <i class="fa fa-users-viewfinder nav-icon"></i>
+                                <p>Создать группу </p>
                             </a>
                         </li>
 
@@ -100,7 +98,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-address-book"></i>
+                        <i class="nav-icon fas fa-users"></i>
                         <p>
                             Студенты
                             <i class="fas fa-angle-left right"></i>
@@ -110,14 +108,14 @@
                         <li class="nav-item">
                             <a href="{{route('students.index')}}" class="nav-link">
                                 <i class="fa-solid fa-users nav-icon"></i>
-                                <p>Список </p>
+                                <p>Список студентов </p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="{{route('students.create')}}" class="nav-link">
-                                <i class="fa fa-user nav-icon"></i>
-                                <p>Добавить </p>
+                                <i class="fa fa-user-plus nav-icon"></i>
+                                <p>Добавить студента </p>
                             </a>
                         </li>
 
@@ -128,7 +126,7 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
+                        <i class="nav-icon fas fa-calendar-days"></i>
                         <p>
                             Расписания
                             <i class="fas fa-angle-left right"></i>
@@ -137,14 +135,14 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('timetables.index')}}" class="nav-link">
-                                <i class="fa-solid fa-users nav-icon"></i>
-                                <p>Список </p>
+                                <i class="fa-solid fa-table-list nav-icon"></i>
+                                <p>Просмотр </p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="{{route('timetables.create')}}" class="nav-link">
-                                <i class="fa fa-user nav-icon"></i>
+                                <i class="fa fa-calendar-plus nav-icon"></i>
                                 <p>Добавить </p>
                             </a>
                         </li>
@@ -153,12 +151,40 @@
 
                 <li class="nav-item">
                     <a href="{{route('journals.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
+                        <i class="nav-icon fas fa-pencil"></i>
                         <p>
                             Журналы
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-wallet"></i>
+                        <p>
+                            Доходы
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('incomes.index')}}" class="nav-link">
+                                <i class="fa-solid fa-clock-rotate-left nav-icon"></i>
+                                <p>Платежы</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{route('incomes.create')}}" class="nav-link">
+                                <i class="fa fa-square-plus nav-icon"></i>
+                                <p>Добавить платеж </p>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
 
 
         </nav>
