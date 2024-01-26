@@ -1,7 +1,9 @@
 //Data Table
 $(function () {
    $("#example1").DataTable({
-      "responsive": true,
+       "lengthMenu": [25, 50, 75, 100], // Количество записей на странице, доступные в выпадающем списке
+       "pageLength": 25,
+       "responsive": true,
       "lengthChange": false,
       "autoWidth": false,
       "buttons": [
