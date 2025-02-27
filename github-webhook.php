@@ -1,7 +1,6 @@
 <?php
 $secret = 'StartCoding'; // Укажите ваш секретный ключ
 
-// Путь к вашему проекту на сервере
 $projectPath = '/home/r/ravshan69/system/public_html';
 $logFile = $projectPath . '/deploy.log';
 
