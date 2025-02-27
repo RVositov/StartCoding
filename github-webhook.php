@@ -4,10 +4,8 @@ $secret = 'StartCoding'; // Укажите ваш секретный ключ
 $projectPath = '/home/r/ravshan69/system/public_html';
 $logFile = $projectPath . '/deploy.log';
 
-// Получаем данные из POST-запроса
 $payload = file_get_contents('php://input');
 
-// Проверяем подпись запроса, чтобы убедиться, что он пришел от GitHub
 $signature = "sha256=" . hash_hmac('sha256', $payload, $secret);
 
 if (!hash_equals($signature, $_SERVER['HTTP_X_HUB_SIGNATURE_256'] ?? '')) {
