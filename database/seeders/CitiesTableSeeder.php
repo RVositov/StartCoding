@@ -9,9 +9,7 @@ class CitiesTableSeeder extends Seeder
 {
     public function run()
     {
-
-
-        // Генерация тестовых данных для городов
+   // Генерация тестовых данных для городов
         $cities = [
             ['name' => 'Худжанд'],
             ['name' => 'Б.Гафуров'],
@@ -19,7 +17,6 @@ class CitiesTableSeeder extends Seeder
             ['name' => 'Исфара'],
             ['name' => 'Гулистон'],
             ['name' => 'Канибадам'],
-            ['name' => 'Пенджикент'],
             ['name' => 'Бустон'],
             ['name' => 'Айни'],
             ['name' => 'Ашт'],

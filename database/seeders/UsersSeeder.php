@@ -12,13 +12,13 @@ class UsersSeeder extends Seeder
     public function run()
     {
         // Удалить существующие записи в таблице users
-        DB::table('users')->truncate();
+       // DB::table('users')->truncate();
 
         // Создать тестовых пользователей
         User::create([
-            'name' => 'John Doe',
-            'email' => 'john.doe@example.com',
-            'password' => Hash::make('123456789'),
+            'name' => 'startCoding',
+            'email' => 'startCoding@example.com',
+            'password' => Hash::make('startCoding'),
         ]);
 
         // Дополнительные пользователи, если нужно

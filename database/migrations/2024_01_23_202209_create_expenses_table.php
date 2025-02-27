@@ -15,8 +15,7 @@ class CreateExpensesTable extends Migration
             $table->id();
             $table->string('name');
             $table->decimal('price', 10, 2);
-            $table->unsignedBigInteger('created_by');
-            $table->foreign('created_by')->references('id')->on('users'); // Предполагается, что у вас уже есть таблица users
+            $table->foreignId('created_by')->constrained('users');
             $table->timestamps();
         });
     }
